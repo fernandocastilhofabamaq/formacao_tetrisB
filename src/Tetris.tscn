@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Menu.gd" type="Script" id=1]
+[ext_resource path="res://src/Main.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 112, 448 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 272, 400 )
+
+[node name="UI" type="Polygon2D" parent="."]
+position = Vector2( 240, -528 )
+z_index = 7
+color = Color( 0.231373, 0.231373, 0.231373, 1 )
+offset = Vector2( -16, 880 )
+polygon = PoolVector2Array( -496, -816, 176, -816, 176, 16, -496, 16 )
+script = ExtResource( 1 )
+speed = 80.0
+
+[node name="Button" type="Button" parent="UI"]
+margin_left = -384.0
+margin_top = 592.0
+margin_right = -301.0
+margin_bottom = 612.0
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="UI"]
+wait_time = 1.586
+
+[node name="Gameboard" type="Polygon2D" parent="."]
+position = Vector2( 224, 352 )
+color = Color( 0.176471, 0.176471, 0.176471, 1 )
+offset = Vector2( -224, -416 )
+polygon = PoolVector2Array( -256, -320, -256, 416, 224, 416, 224, -320 )
+script = ExtResource( 10 )
+
+[node name="Timer" type="Timer" parent="Gameboard"]
+wait_time = 0.3
+
+[node name="Floor" type="StaticBody2D" parent="Gameboard"]
+position = Vector2( 224, -721 )
+collision_layer = 2
+
+[node name="Floor" type="CollisionPolygon2D" parent="Gameboard/Floor"]
+position = Vector2( 384, 1329 )
+scale = Vector2( 1.82813, 0.809642 )
+polygon = PoolVector2Array( -717.673, -573.093, -183.794, -573.093, -183.794, -750.949, -717.673, -750.949 )
+
+[node name="Walls" type="StaticBody2D" parent="Gameboard"]
+position = Vector2( 240, -721 )
+
+[node name="Left" type="CollisionShape2D" parent="Gameboard/Walls"]
+position = Vector2( -832, 273 )
+shape = SubResource( 1 )
+
+[node name="Right" type="CollisionShape2D" parent="Gameboard/Walls"]
+position = Vector2( -128, 273 )
+shape = SubResource( 1 )
+
+[node name="Background" type="Polygon2D" parent="Gameboard"]
+position = Vector2( -192, -352 )
+z_index = -1
+color = Color( 0.764706, 0.807843, 0.823529, 1 )
+polygon = PoolVector2Array( -304, -400, -304, 368, 368, 368, 368, -400 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Gameboard/Background"]
+z_index = 4
+color = Color( 0.764706, 0.807843, 0.823529, 1 )
+polygon = PoolVector2Array( -304, -464, -304, -384, 368, -384, 368, -464 )
+
+[node name="PreviewArea" type="Polygon2D" parent="Gameboard/Background"]
+position = Vector2( 288, 320 )
+offset = Vector2( -272, -304 )
+polygon = PoolVector2Array( 208, 176, 208, 336, 336, 336, 336, 176 )
+
+[node name="Points" type="Polygon2D" parent="Gameboard/Background"]
+polygon = PoolVector2Array( 208, -376, 208, -348, 352, -348, 352, -376 )
+
+[node name="Label" type="Label" parent="Gameboard/Background/Points"]
+margin_left = 212.0
+margin_top = -368.0
+margin_right = 260.0
+margin_bottom = -352.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Points:"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Gameboard/Background/Points"]
+margin_left = 263.0
+margin_top = -368.0
+margin_right = 347.0
+margin_bottom = -354.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
