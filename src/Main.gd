@@ -110,9 +110,9 @@ func _process(delta):
 		move_to += Vector2(32,0)
 		
 	if Input.is_action_just_pressed("ui_down"):
-		$Timer.wait_time /= 2;
+		$Timer.wait_time /= 20;
 	if Input.is_action_just_released("ui_down"):
-		$Timer.wait_time *= 2;
+		$Timer.wait_time *= 20;
 		
 	if Input.is_action_just_pressed("ui_up"):
 		active.rotate(deg2rad(90))

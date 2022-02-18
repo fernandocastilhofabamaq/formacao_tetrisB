@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Menu.gd" type="Script" id=1]
-[ext_resource path="res://assets/bonus_background.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/bonus_background_credits_runup.wav" type="AudioStream" id=2]
 [ext_resource path="res://src/GameManager.gd" type="Script" id=3]
 [ext_resource path="res://src/Main.gd" type="Script" id=10]
 
@@ -109,4 +109,5 @@ __meta__ = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+
 [connection signal="pressed" from="UI/Button" to="." method="PlaySound"]

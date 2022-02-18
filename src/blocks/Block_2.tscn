@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 15 )
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/piece_blue.png-26f75b4e51f4789aaaa745bf9c4e8ef2.stex"
+
+[node name="Block" type="CollisionShape2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+scale = Vector2( 0.457143, 0.457143 )
+texture = SubResource( 2 )

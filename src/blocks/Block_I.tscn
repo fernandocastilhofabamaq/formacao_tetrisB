@@ -6,16 +6,13 @@
 collision_mask = 3
 
 [node name="A" parent="." instance=ExtResource( 1 )]
-modulate = Color( 0.760784, 0.305882, 0.388235, 1 )
+position = Vector2( 0, 48 )
 
 [node name="B" parent="." instance=ExtResource( 1 )]
-modulate = Color( 0.760784, 0.305882, 0.388235, 1 )
-position = Vector2( 0, -96 )
+position = Vector2( 0, -48 )
 
 [node name="C" parent="." instance=ExtResource( 1 )]
-modulate = Color( 0.760784, 0.305882, 0.388235, 1 )
-position = Vector2( 0, -32 )
+position = Vector2( 0, 16 )
 
 [node name="D" parent="." instance=ExtResource( 1 )]
-modulate = Color( 0.760784, 0.305882, 0.388235, 1 )
-position = Vector2( 0, -64 )
+position = Vector2( 0, -16 )
