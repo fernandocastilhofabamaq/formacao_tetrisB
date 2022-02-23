@@ -1,16 +1,39 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/bonus_background_credits_runup.wav" type="AudioStream" id=2]
 [ext_resource path="res://src/GameManager.gd" type="Script" id=3]
+[ext_resource path="res://assets/UI_FONT.OTF" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/game_logo.png" type="Texture" id=5]
 [ext_resource path="res://src/Main.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=5]
+size = 46
+font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 112, 448 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 37
+outline_size = 6
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 37
+outline_size = 6
+font_data = ExtResource( 4 )
+
 [node name="Node2D" type="Node2D"]
 position = Vector2( 272, 400 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_vertical_guides_": [ 114.0, 447.0 ]
+}
 
 [node name="UI" type="Polygon2D" parent="."]
 position = Vector2( 240, -528 )
@@ -21,12 +44,19 @@ polygon = PoolVector2Array( -496, -816, 176, -816, 176, 16, -496, 16 )
 script = ExtResource( 1 )
 speed = 80.0
 
+[node name="GameLogo" type="Sprite" parent="UI"]
+position = Vector2( -180, 288 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 16
+texture = ExtResource( 5 )
+
 [node name="Button" type="Button" parent="UI"]
-margin_left = -384.0
-margin_top = 592.0
-margin_right = -301.0
-margin_bottom = 612.0
-text = "Start Game"
+margin_left = -369.0
+margin_top = 504.0
+margin_right = 6.0
+margin_bottom = 632.0
+custom_fonts/font = SubResource( 5 )
+text = "PRESS START"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,10 +65,10 @@ __meta__ = {
 wait_time = 1.586
 
 [node name="Gameboard" type="Polygon2D" parent="."]
-position = Vector2( 224, 352 )
+position = Vector2( 226, 352 )
 color = Color( 0.176471, 0.176471, 0.176471, 1 )
 offset = Vector2( -224, -416 )
-polygon = PoolVector2Array( -256, -320, -256, 416, 224, 416, 224, -320 )
+polygon = PoolVector2Array( -160, -320, -160, 416, 160, 416, 160, 48, 160, -320 )
 script = ExtResource( 10 )
 
 [node name="Timer" type="Timer" parent="Gameboard"]
@@ -57,17 +87,17 @@ polygon = PoolVector2Array( -717.673, -573.093, -183.794, -573.093, -183.794, -7
 position = Vector2( 240, -721 )
 
 [node name="Left" type="CollisionShape2D" parent="Gameboard/Walls"]
-position = Vector2( -832, 273 )
+position = Vector2( -736, 273 )
 shape = SubResource( 1 )
 
 [node name="Right" type="CollisionShape2D" parent="Gameboard/Walls"]
-position = Vector2( -128, 273 )
+position = Vector2( -178, 273 )
 shape = SubResource( 1 )
 
 [node name="Background" type="Polygon2D" parent="Gameboard"]
 position = Vector2( -192, -352 )
 z_index = -1
-color = Color( 0.764706, 0.807843, 0.823529, 1 )
+color = Color( 0.741176, 0.8, 0.819608, 1 )
 polygon = PoolVector2Array( -304, -400, -304, 368, 368, 368, 368, -400 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Gameboard/Background"]
@@ -75,34 +105,51 @@ z_index = 4
 color = Color( 0.764706, 0.807843, 0.823529, 1 )
 polygon = PoolVector2Array( -304, -464, -304, -384, 368, -384, 368, -464 )
 
-[node name="PreviewArea" type="Polygon2D" parent="Gameboard/Background"]
-position = Vector2( 288, 320 )
-offset = Vector2( -272, -304 )
-polygon = PoolVector2Array( 208, 176, 208, 336, 336, 336, 336, 176 )
-
 [node name="Points" type="Polygon2D" parent="Gameboard/Background"]
-polygon = PoolVector2Array( 208, -376, 208, -348, 352, -348, 352, -376 )
+position = Vector2( -19, 107 )
+polygon = PoolVector2Array( 182, -400, 182, -323, 357.484, -323, 357.484, -400, 320, -400 )
 
-[node name="Label" type="Label" parent="Gameboard/Background/Points"]
-margin_left = 212.0
-margin_top = -368.0
-margin_right = 260.0
-margin_bottom = -352.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Points:"
+[node name="Points" type="Label" parent="Gameboard/Background/Points"]
+margin_left = 226.0
+margin_top = -382.0
+margin_right = 310.0
+margin_bottom = -335.0
+custom_colors/font_color = Color( 0.0588235, 0, 0.466667, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 1
+uppercase = true
 max_lines_visible = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Points" type="Label" parent="Gameboard/Background/Points"]
-margin_left = 263.0
-margin_top = -368.0
-margin_right = 347.0
-margin_bottom = -354.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0"
-max_lines_visible = 1
+[node name="Label" type="Label" parent="Gameboard/Background/Points"]
+margin_left = 203.0
+margin_top = -424.0
+margin_right = 339.0
+margin_bottom = -389.0
+custom_colors/font_color = Color( 0.0588235, 0, 0.466667, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "SCORE:"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PreviewArea" type="Polygon2D" parent="Gameboard/Background"]
+position = Vector2( 248, 80 )
+offset = Vector2( -272, -278 )
+polygon = PoolVector2Array( 208, 176, 208, 336, 336, 336, 336, 176 )
+
+[node name="Label" type="Label" parent="Gameboard/Background"]
+margin_left = 195.0
+margin_top = -45.0
+margin_right = 303.0
+margin_bottom = -10.0
+custom_colors/font_color = Color( 0.0588235, 0, 0.466667, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "NEXT:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

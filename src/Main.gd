@@ -95,7 +95,7 @@ func _ready():
 	preview.add_child(blocks.pop_back())
 	spawn_next()
 	block_area_origin = self.global_position - Vector2(16, 16)
-	retired = BlockMap.new(23,15)
+	retired = BlockMap.new(23,10)
 	print("ready")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

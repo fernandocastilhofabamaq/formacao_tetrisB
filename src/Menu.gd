@@ -13,7 +13,7 @@ var blocks = []
 var active = []
 var rng = RandomNumberGenerator.new()
 
-export var speed = 10.0
+export var speed = 15.0
 
 func fill_blocks():
 	blocks.clear()
@@ -28,7 +28,7 @@ func on_spawn_next():
 	
 	next.z_index=15
 	next.rotation = rng.randf()*2*PI
-	next.position += Vector2(rng.randf()*300-170,0)
+	next.position += Vector2(rng.randf()*500-500,0)
 	
 	active.push_back(next)
 	self.add_child(next)
