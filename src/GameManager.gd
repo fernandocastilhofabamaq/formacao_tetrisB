@@ -1,5 +1,8 @@
 extends Node2D
-onready var AudioPlayer:AudioStreamPlayer2D=get_node("AudioStreamPlayer2D")
+onready var Bg_music:AudioStreamPlayer2D=get_node("BG_Music")
+
+
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,4 +20,9 @@ func _ready():
 
 
 func PlaySound():
-	AudioPlayer.play()
+	Bg_music.play()
+	
+
+	
+	
+

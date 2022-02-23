@@ -21,6 +21,10 @@ var points
 var points_label
 var next_level
 
+
+	
+	
+
 func fill_blocks():
 	blocks.clear()
 	for block in res:
@@ -50,6 +54,7 @@ func check_rows():
 	for r in range(retired.rows):
 		if retired.is_complete(r):
 			completed.push_back(r)
+			$"../Line_hit".play()
 			
 	var num_completed = completed.size()
 	
@@ -72,6 +77,7 @@ func spawn_next():
 	
 	self.add_child(active)
 	active.set_position(Vector2(-240,-720))
+	
 	
 func move_or_return(object, location):
 	var collision = object.move_and_collide(location)
@@ -102,19 +108,23 @@ func _ready():
 func _process(delta):
 	if game_over:
 		return
-	
+
 	var move_to = Vector2(0,0)
 	if Input.is_action_just_pressed("ui_left"):
+		$"../Beep".play()
 		move_to += Vector2(-32,0)
+
 	if Input.is_action_just_pressed("ui_right"):
+		$"../Beep".play()
 		move_to += Vector2(32,0)
 		
 	if Input.is_action_just_pressed("ui_down"):
-		$Timer.wait_time /= 20;
+		$Timer.wait_time /= 20; 
 	if Input.is_action_just_released("ui_down"):
 		$Timer.wait_time *= 20;
 		
 	if Input.is_action_just_pressed("ui_up"):
+		$"../Beep".play()
 		active.rotate(deg2rad(90))
 	
 	move_or_return(active, move_to)

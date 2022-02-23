@@ -22,6 +22,11 @@ config/icon="res://icon.png"
 
 window/size/width=672
 window/size/height=768
+window/size/resizable=false
+
+[global]
+
+display=false
 
 [layer_names]
 
