@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/bonus_background_credits_runup.wav" type="AudioStream" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/UI_FONT.OTF" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/game_logo.png" type="Texture" id=5]
 [ext_resource path="res://assets/line_hit.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/reveal.png" type="Texture" id=7]
 [ext_resource path="res://assets/move.wav" type="AudioStream" id=8]
 [ext_resource path="res://src/Main.gd" type="Script" id=10]
 
@@ -157,6 +158,14 @@ text = "NEXT:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Reveal" type="Sprite" parent="Gameboard/Background"]
+position = Vector2( -898, -381 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 319, 737 )
+region_filter_clip = true
 
 [node name="BG_Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
