@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/bonus_background_credits_runup.wav" type="AudioStream" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/line.mp3" type="AudioStream" id=6]
 [ext_resource path="res://assets/bg.png" type="Texture" id=7]
 [ext_resource path="res://assets/fast down.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/reveal.png" type="Texture" id=9]
 [ext_resource path="res://src/Main.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=5]
@@ -103,6 +104,18 @@ shape = SubResource( 1 )
 position = Vector2( -161, -366 )
 z_as_relative = false
 texture = ExtResource( 7 )
+
+[node name="Node" type="Node2D" parent="Gameboard"]
+position = Vector2( -96, -110 )
+rotation = 3.14159
+scale = Vector2( 0.8, 0.8 )
+
+[node name="SpriteReveal" type="Sprite" parent="Gameboard/Node"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 9 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 110 )
 
 [node name="Background" type="Polygon2D" parent="Gameboard"]
 position = Vector2( -192, -352 )

@@ -49,12 +49,18 @@ func retire():
 		retired.add(pos.y, new_parent)
 	return false
 
+func reveal_image():
+	var reveal_value
+	reveal_value = points/5
+	$label.Sprite("Node/SpriteReveal").region_rect.h = reveal_value
+
 func check_rows():
 	var completed = []
 	for r in range(retired.rows):
 		if retired.is_complete(r):
 			completed.push_back(r)
 			$"../Line_hit".play()
+			
 			
 	var num_completed = completed.size()
 	
@@ -142,9 +148,9 @@ func _process(delta):
 		
 		match check_rows():
 			1: points += 100
-			2: points += 250
-			3: points += 750
-			4: points += 1000
+			2: points += 200
+			3: points += 300
+			4: points += 500
 		points_label.text = "%d" % points
 		if points >= next_level and $Timer.wait_time > 0.1:
 			next_level *= 2
