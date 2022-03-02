@@ -5,9 +5,9 @@
 [ext_resource path="res://src/GameManager.gd" type="Script" id=3]
 [ext_resource path="res://assets/UI_FONT.OTF" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/game_logo.png" type="Texture" id=5]
-[ext_resource path="res://assets/line_hit.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/line.mp3" type="AudioStream" id=6]
 [ext_resource path="res://assets/bg.png" type="Texture" id=7]
-[ext_resource path="res://assets/move.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/fast down.mp3" type="AudioStream" id=8]
 [ext_resource path="res://src/Main.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=5]
@@ -108,10 +108,10 @@ texture = ExtResource( 7 )
 position = Vector2( -192, -352 )
 z_index = -1
 color = Color( 0.819608, 0.819608, 0.827451, 1 )
-polygon = PoolVector2Array( -304, -400, -304, 368, 368, 368, 368, -400 )
+polygon = PoolVector2Array( -304, -398, -304, 368, 368, 368, 368, -398 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Gameboard/Background"]
-position = Vector2( 0, -17 )
+position = Vector2( 0, -22 )
 z_index = 4
 color = Color( 0.764706, 0.807843, 0.823529, 1 )
 polygon = PoolVector2Array( -304, -464, -304, -384, 368, -384, 368, -464 )
