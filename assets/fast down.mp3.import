@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fast down.mp3-2c180867dfef74d69ef9afc3b0e2eb5d.mp3str"
+
+[deps]
+
+source_file="res://assets/fast down.mp3"
+dest_files=[ "res://.import/fast down.mp3-2c180867dfef74d69ef9afc3b0e2eb5d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
