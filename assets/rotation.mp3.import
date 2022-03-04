@@ -11,5 +11,5 @@ dest_files=[ "res://.import/rotation.mp3-2720b049fafa41866438ac9c52d1a505.mp3str
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

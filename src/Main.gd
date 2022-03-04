@@ -50,9 +50,9 @@ func retire():
 	return false
 
 func reveal_image():
-	var reveal_value
-	reveal_value = points/5
-	$label.Sprite("Node/SpriteReveal").region_rect.h = reveal_value
+	var reveal_value = points/4
+	var newRect = Rect2(0,0,320,reveal_value)
+	$"Node/SpriteReveal".region_rect = newRect
 
 func check_rows():
 	var completed = []
@@ -152,6 +152,7 @@ func _process(delta):
 			3: points += 300
 			4: points += 500
 		points_label.text = "%d" % points
+		reveal_image()
 		if points >= next_level and $Timer.wait_time > 0.1:
 			next_level *= 2
 			$Timer.wait_time -= 0.1
