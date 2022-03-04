@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Menu.gd" type="Script" id=1]
-[ext_resource path="res://assets/bonus_background_credits_runup.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/background.wav" type="AudioStream" id=2]
 [ext_resource path="res://src/GameManager.gd" type="Script" id=3]
 [ext_resource path="res://assets/UI_FONT.OTF" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/game_logo.png" type="Texture" id=5]
@@ -185,7 +185,7 @@ __meta__ = {
 
 [node name="BG_Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
-volume_db = -22.0
+volume_db = -6.0
 
 [node name="Line_hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )

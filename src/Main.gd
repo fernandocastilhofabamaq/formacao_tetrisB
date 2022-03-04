@@ -50,7 +50,7 @@ func retire():
 	return false
 
 func reveal_image():
-	var reveal_value = points/4
+	var reveal_value = points/2
 	var newRect = Rect2(0,0,320,reveal_value)
 	$"Node/SpriteReveal".region_rect = newRect
 
