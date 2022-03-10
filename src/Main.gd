@@ -7,8 +7,12 @@ var res = [
 	load("res://src/blocks/Block_R.tscn"),
 	load("res://src/blocks/Block_SL.tscn"),
 	load("res://src/blocks/Block_SR.tscn"),
-	load("res://src/blocks/Block_T.tscn")
+	load("res://src/blocks/Block_T.tscn"),
 ]
+var events = [
+	"res://game_over.tscn",
+	"res://game_won.tscn"
+	]
 var blocks = [];
 var move_down = true;
 var preview
@@ -53,6 +57,9 @@ func reveal_image():
 	var reveal_value = points/2
 	var newRect = Rect2(0,0,320,reveal_value)
 	$"Node/SpriteReveal".region_rect = newRect
+	if points >= 1300:
+		get_tree().change_scene(events[1])
+		
 
 func check_rows():
 	var completed = []
@@ -144,6 +151,7 @@ func _process(delta):
 		if retire():
 			game_over = true
 			print("game over")
+			get_tree().change_scene(events[0])
 			return
 		
 		match check_rows():

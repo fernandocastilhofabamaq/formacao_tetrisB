@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/background.wav" type="AudioStream" id=2]
@@ -10,9 +10,10 @@
 [ext_resource path="res://assets/move.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/reveal.png" type="Texture" id=9]
 [ext_resource path="res://src/Main.gd" type="Script" id=10]
+[ext_resource path="res://buttons_themes.tres" type="Theme" id=11]
 
 [sub_resource type="DynamicFont" id=5]
-size = 46
+size = 43
 font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -61,8 +62,12 @@ margin_left = -337.0
 margin_top = 669.0
 margin_right = -7.0
 margin_bottom = 726.0
+theme = ExtResource( 11 )
 custom_fonts/font = SubResource( 5 )
 text = "PRESS START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Timer" type="Timer" parent="UI"]
 wait_time = 1.586
