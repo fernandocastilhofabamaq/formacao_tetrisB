@@ -58,10 +58,11 @@ flatness = 0.8
 gravity = Vector3( 0, -200, 0 )
 initial_velocity = 500.0
 initial_velocity_random = 0.34
-angular_velocity = 22.0
+angular_velocity = 205.53
+angular_velocity_random = 0.72
 orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 0.4
+orbit_velocity_random = 0.27
+scale = 0.3
 
 [sub_resource type="CanvasItemMaterial" id=4]
 blend_mode = 1
@@ -135,8 +136,9 @@ texture = ExtResource( 1 )
 material = ExtResource( 47 )
 position = Vector2( 346, 455 )
 scale = Vector2( 0.5, 0.5 )
-amount = 400
+amount = 100
 lifetime = 20.0
+explosiveness = 0.72
 process_material = SubResource( 8 )
 texture = ExtResource( 6 )
 
@@ -161,7 +163,7 @@ texture = SubResource( 1 )
 position = Vector2( 330, 483 )
 scale = Vector2( 0.3925, 0.3925 )
 frames = SubResource( 2 )
-frame = 35
+frame = 38
 speed_scale = 10.0
 playing = true
 
